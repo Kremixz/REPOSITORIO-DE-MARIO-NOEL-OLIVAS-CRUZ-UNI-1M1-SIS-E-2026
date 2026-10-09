@@ -1,6 +1,6 @@
 #Tuplas10_Ferreteria:Catagolo_Factura
 
-# Parte A del ejercicio:
+# Parte A del ejercicio 10
 
 catalogo = (
     ("P01", "Martillo", 250.00),
@@ -20,4 +20,28 @@ def buscar_producto(codigo):
 
 print(buscar_producto("P03"))
 print(buscar_producto("P09"))
-      
+
+#Parte B del Ejercicio 10
+
+pedido = (("P03", 2), ("P01", 1), ("P05", 4), ("P09", 3))
+
+
+def calcular_factura(pedido):
+    subtotal = 0
+    for codigo, cantidad in pedido:
+        producto = buscar_producto(codigo)
+        if producto is None:
+            print("Código", codigo, "no existe")
+        else:
+            importe = producto[2] * cantidad
+            print(f"{producto[1]}: {cantidad} x C$ {producto[2]:.2f} = C$ {importe:.2f}")
+            subtotal = subtotal + importe
+    iva = subtotal * 0.15
+    total = subtotal + iva
+    return (subtotal, iva, total)
+
+
+subtotal, iva, total = calcular_factura(pedido)
+print(f"Subtotal: C$ {subtotal:.2f}")
+print(f"IVA (15%): C$ {iva:.2f}")
+print(f"Total: C$ {total:.2f}")
