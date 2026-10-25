@@ -1,6 +1,6 @@
 # Proyecto 1 · Tipo de cambio del BCN
-# Nombre: (tu nombre completo)
-# Carné: (tu carné)
+# Nombre: Mario Noel Olivas Cruz
+# Carné: 6B76F959
 
 # ---------------------------------------------------------------
 # DATOS
